@@ -156,7 +156,8 @@ def assign_values_to_risks(risks, digits, image_path):
     for d, x, y in assinged_risks:
         cv2.putText(result, str(d), (x, y), cv2.FONT_HERSHEY_SIMPLEX, 0.3, (255, 0, 0), 1)
     cv2.imwrite("result_image.jpg", result)
-    return digit_mapping
+
+    return assinged_risks
 
 
 
@@ -167,8 +168,8 @@ def main():
     print(risks)
     digits = find_digits(image)
     
-    mapping = assign_values_to_risks(risks, digits, image)
-    print(mapping)
+    assinged_risks = assign_values_to_risks(risks, digits, image)
+    print(assinged_risks)
 
 
 if __name__ == "__main__":
